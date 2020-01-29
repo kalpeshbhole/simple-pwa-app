@@ -46,10 +46,6 @@ self.addEventListener("install", function (event) {
       console.log("[PWA Builder] Caching pages during install");
 
       return cache.addAll(precacheFiles).then(function () {
-        if (offlineFallbackPage === "internet-issue.html") {
-          return cache.add(new Response("TODO: Update the value of the offlineFallbackPage constant in the serviceworker."));
-        }
-
         return cache.add(offlineFallbackPage);
       });
     })
